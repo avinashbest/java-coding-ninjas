@@ -1,10 +1,15 @@
 package gettingStarted;
 
+import java.util.Scanner;
+
 public class simpleInterest {
     public static void main(String[] args) {
-        int principal = 1000;
-        int rate = 10;
-        int time = 5;
+        //Taking User Input form the console input stream
+        Scanner scan = new Scanner(System.in);
+
+        int principal = scan.nextInt();
+        int rate = scan.nextInt();
+        int time = scan.nextInt();
 
         int SI = (principal * rate * time) / 100;
 
