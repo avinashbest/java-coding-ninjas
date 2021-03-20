@@ -30,9 +30,11 @@ import java.util.Scanner;
 public class averageMarks {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        //Taking the input name as a single character
-        //String str = scan.next();
-        //char name = str.charAt(0);
+        /*
+        Taking the input name as a single character
+        String str = scan.next();
+        char name = str.charAt(0);
+        */
         char name = scan.next().charAt(0);
         //Taking the input marks as integer
         int m1 = scan.nextInt();
