@@ -9,19 +9,23 @@ public class checkPrimality {
         int n = scan.nextInt();
 
         int divisor = 2;
-        boolean flag = true;
+//        boolean flag = true;
         while (divisor <= Math.sqrt(n)) {
             if (n % divisor == 0) {
-                flag = false;
-                break;
+//                flag = false;
+//                break;
+                System.out.println("Not Prime");
+                return;
             }
             divisor += 1;
         }
 
-        if (flag) {
-            System.out.println("Prime Number");
-        } else {
-            System.out.println("Composite Number");
-        }
+        System.out.println("Prime");
+
+//        if (flag) {
+//            System.out.println("Prime Number");
+//        } else {
+//            System.out.println("Composite Number");
+//        }
     }
 }
