@@ -13,34 +13,40 @@ public class calculatingNcR {
         return factorial;
     }
 
+    //    function to calculate nCr of input n and r
+    public static int nCr(int n, int r) {
+        int nFactorial = factorial(n);
+        int rFactorial = factorial(r);
+        int nMinusRFactorial = factorial(n - r);
+        return nFactorial / (rFactorial * nMinusRFactorial);
+    }
+
+    //    main function or driver code
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         int r = scan.nextInt();
 
-        int nFactorial = factorial(n);
+        int result = nCr(n, r);
+        System.out.println(result);
 /*
         int nFactorial = 1;
         for (int i = 1; i <= n; i++) {
             nFactorial *= i;
         }
 */
-        int rFactorial = factorial(r);
 /*
         int rFactorial = 1;
         for (int i = 1; i <= r; i++) {
             rFactorial *= i;
         }
 */
-        int nMinusRFactorial = factorial(n - r);
 /*
         int nMinusRFactorial = 1;
         for (int i = 1; i <= (n - r); i++) {
             nMinusRFactorial *= i;
         }
 */
-        int nCr = nFactorial / (rFactorial * nMinusRFactorial);
-        System.out.println(nCr);
 
     }
 }
