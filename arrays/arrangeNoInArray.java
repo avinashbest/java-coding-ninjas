@@ -37,18 +37,20 @@ public class arrangeNoInArray {
     /*How to approach?
 To arrange the numbers in the given sequence, we can continue by taking 2 indices one from start(i) and the other from the end(j). Start with number =1, print it on the first index(i), then increment the number and index i, now print the number on the last index(j), again increment the number and decrement j, print number on the 2nd index(i) and so on continue till i crosses j.*/
     public static void arrangeArray(int[] arr) {
-        int i = 0, j = arr.length - 1;
-        int number = 1;
-        while (i < j) {
-            arr[i] = number;
-            number++;
-            i++;
-            arr[j] = number;
-            number++;
-            j--;
-        }
-        if (i == j) {
-            arr[i] = number;
+        int left = 0;
+        int right = arr.length - 1;
+        int counter = 1;
+
+        while (left <= right) {
+            if (counter % 2 == 1) {
+                arr[left] = counter;
+                counter++;
+                left++;
+            } else {
+                arr[right] = counter;
+                counter++;
+                right--;
+            }
         }
     }
 
