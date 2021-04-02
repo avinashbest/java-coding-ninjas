@@ -52,16 +52,24 @@ Answer = (0^0) ^ (1^1) ^ (2^2^2) ^ (3^3)
 
     public static int findDuplicate(int[] arr) {
         int result = 0;
-
         for (int i = 0; i < arr.length; i++) {
             result = result ^ arr[i];
         }
-
         for (int i = 0; i < arr.length - 1; i++) {
             result = result ^ i;
         }
-
         return result;
+    }
+    /*Another approach is to make use of the condition that all elements lies between 0 and n-2. So first calculate the sum of all natural numbers between 0 to n-2 by using the direct formula  ((n - 1) * (n - 2)) / 2  and sum of all elements of the array. Now, subtract the sum of all natural numbers between 0 to n-2 from sum of all elements of the array. This will give you the duplicate element present in the array.*/
+
+    public static int findDuplicateUsingSum(int[] arr) {
+        int sum = 0;
+        for (int i : arr) {
+            sum += arr[i];
+        }
+        int n = arr.length;
+        int sumOfNaturalNumbers = ((n - 1) * (n - 2)) / 2;
+        return (sum - sumOfNaturalNumbers);
     }
 
     public static void main(String[] args) {
@@ -74,6 +82,7 @@ Answer = (0^0) ^ (1^1) ^ (2^2^2) ^ (3^3)
                 arr[i] = scan.nextInt();
             }
             System.out.println(findDuplicate(arr));
+//            System.out.println(findDuplicateUsingSum(arr));
             testCases--;
         }
     }
