@@ -1,3 +1,15 @@
+# For Manual Compilation of Java Code:
+
+- For compilation.
+
+> javac FileName.java
+
+- For Running the compiled code.
+
+> java FileName
+
+* Make sure you are in same directory.
+
 ### The initial segment will focus on logic building and making you familiar with basic programming fundamentals.
 
 - Flow Charts
