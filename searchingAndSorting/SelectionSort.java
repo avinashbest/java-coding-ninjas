@@ -4,7 +4,8 @@ public class SelectionSort {
 
     public static void selectionSort(int[] arr) {
 /*
-  1.      INPUT: A[1 . . . n], an array of any n numbers is unknown order
+    SELECTION-SORT(A)
+  1.      // INPUT: A[1 . . . n], an array of any n numbers is unknown order
   2.      Integer i, j, min
   3.      for i = 1 to n - 1
   4.          do min = i
@@ -13,22 +14,27 @@ public class SelectionSort {
   7.              then min = j
   8.            swap A[i] <-> A[min]
 */
-        for (int i = 0; i < arr.length - 1; i++) {
-            int minimumElement = arr[i];
-            int minimumIndex = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < minimumElement) {
-                    minimumElement = arr[j];
-                    minimumIndex = j;
+        //finding the minimum element in the unsorted arr[i . . . n-1]
+        //Assuming the minIndex is the 1st element
+        int i, j, minIndex;
+        for (i = 0; i < arr.length - 1; i++) {
+            minIndex = i;
+            //test against elements after i to find the smallest
+            for (j = i + 1; j < arr.length; j++) {
+                //if this element is less, then it is the new minimum
+                if (arr[j] < arr[minIndex]) {
+                    //found new minimum, remember its index
+                    minIndex = j;
                 }
             }
-            if (minimumIndex != i) {
-                arr[minimumIndex] = arr[i];
-                arr[i] = minimumElement;
+            if (minIndex != i) {
+//                swap(arr[i], arr[minIndex])
+                int tmp = arr[i];
+                arr[i] = arr[minIndex];
+                arr[minIndex] = tmp;
             }
         }
     }
-
 
     public static void printArray(int[] arr) {
         for (int i : arr) {
