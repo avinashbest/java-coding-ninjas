@@ -1,7 +1,5 @@
 package strings.Assignment;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Scanner;
 
 /*For a given a string(str), find and return the highest occurring character.
