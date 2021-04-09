@@ -1,18 +1,21 @@
-package twoDimensionalArrays;
+package twoDimensionalArray;
 
 import java.util.Scanner;
 
-public class Functions2dArray {
+public class LargestColumnSum {
 
-    public static void print2dArray(int[][] arr) {
-        int row = arr.length;
-        int column = arr[0].length;
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < column; j++) {
-                System.out.print(arr[i][j] + "\t");
+    public static int largestColumnSum(int[][] arr) {
+        int largest = Integer.MIN_VALUE;
+        for (int j = 0; j < arr[0].length; j++) {
+            int sumOfEachRow = 0;
+            for (int i = 0; i < arr.length; i++) {
+                sumOfEachRow += arr[i][j];
             }
-            System.out.println();
+            if (sumOfEachRow > largest) {
+                largest = sumOfEachRow;
+            }
         }
+        return largest;
     }
 
     public static int[][] takeInput() {
@@ -33,6 +36,6 @@ public class Functions2dArray {
 
     public static void main(String[] args) {
         int[][] arr = takeInput();
-        print2dArray(arr);
+        System.out.println(largestColumnSum(arr));
     }
 }
