@@ -1,4 +1,4 @@
-package TwoDimensionalArrays;
+package twoDimensionalArrays;
 
 public class How2dArraysAreStored {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package TwoDimensionalArrays.Assignment;
+package twoDimensionalArrays.Assignment;
 
 import java.util.Scanner;
 
