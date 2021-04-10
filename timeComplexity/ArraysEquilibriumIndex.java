@@ -68,7 +68,12 @@ public class ArraysEquilibriumIndex {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 4, 9, 3, 2};
-        System.out.println(arraysEquilibriumIndex(arr));
+        Scanner scan = new Scanner(System.in);
+        int testCases = scan.nextInt();
+        while (testCases != 0) {
+            int[] arr = takeInput();
+            System.out.println(arraysEquilibriumIndex(arr));
+            testCases--;
+        }
     }
 }
