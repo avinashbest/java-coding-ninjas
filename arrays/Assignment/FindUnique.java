@@ -55,15 +55,20 @@ Time complexity of this solution is O(n).
 */
 
     public static int findUnique(int[] arr) {
-//        Answer=0
-        int result = 0;
-//        For i=0 to i less than size:
-        for (int j : arr) {
-//            answer=answer xor input[i]
-            result = result ^ j;
+        for (int i = 0; i < arr.length; i++) {
+            int j;
+            for (j = 0; j < arr.length; j++) {
+                if (i != j) {
+                    if (arr[i] == arr[j]) {
+                        break;
+                    }
+                }
+            }
+            if (j == arr.length) {
+                return arr[i];
+            }
         }
-//        Return answer
-        return result;
+        return Integer.MAX_VALUE;
     }
 
     public static void main(String[] args) {
