@@ -7,17 +7,16 @@ public class CheckSortedArray {
         if (arr.length <= 1) {
             return true;
         }
-
+        if (arr[0] > arr[1]) {
+            return false;
+        }
+        /*breaking the bigger array into smaller array everytime*/
         int[] smallArr = new int[arr.length - 1];
+        /*copying the array*/
         for (int i = 1; i < arr.length; i++) {
             smallArr[i - 1] = arr[i];
         }
-
-        boolean smallAns = checkSorted(smallArr);
-        if (!smallAns) {
-            return false;
-        }
-        return arr[0] <= arr[1];
+        return checkSorted(smallArr);
     }
 
     public static int[] takeInput() {
