@@ -19,6 +19,20 @@ public class CheckSortedArray {
         return checkSorted(smallArr);
     }
 
+    /*this functions check whether the array is sorted or in the range startIndex to arr.length*/
+    public static boolean checkSortedOptimised(int[] arr, int startIndex) {
+        /*if there is only one element which is obviously sorted by default*/
+        if (startIndex >= arr.length - 1) {
+            return true;
+        }
+        /*if first element is of the array is greater than the second element its obviously sorted.*/
+        if (arr[startIndex] > arr[startIndex + 1]) {
+            return false;
+        }
+        return checkSortedOptimised(arr, startIndex + 1);
+    }
+
+
     public static int[] takeInput() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Size of the Array? ");
@@ -33,6 +47,6 @@ public class CheckSortedArray {
 
     public static void main(String[] args) {
         int[] arr = takeInput();
-        System.out.println(checkSorted(arr));
+        System.out.println(checkSortedOptimised(arr, 0));
     }
 }
