@@ -20,7 +20,7 @@ public class CheckSortedArray {
     }
 
     /*this functions check whether the array is sorted or in the range startIndex to arr.length*/
-    public static boolean checkSortedOptimised(int[] arr, int startIndex) {
+    private static boolean checkSortedOptimised(int[] arr, int startIndex) {
         /*if there is only one element which is obviously sorted by default*/
         if (startIndex >= arr.length - 1) {
             return true;
@@ -30,6 +30,11 @@ public class CheckSortedArray {
             return false;
         }
         return checkSortedOptimised(arr, startIndex + 1);
+    }
+
+    /*Recursion and the helper function*/
+    public static boolean checkSortedOptimised(int[] arr) {
+        return checkSortedOptimised(arr, 0);
     }
 
 
@@ -47,6 +52,6 @@ public class CheckSortedArray {
 
     public static void main(String[] args) {
         int[] arr = takeInput();
-        System.out.println(checkSortedOptimised(arr, 0));
+        System.out.println(checkSortedOptimised(arr));
     }
 }
