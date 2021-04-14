@@ -1,5 +1,7 @@
 package recursion1.Assignment;
 
+import java.util.Scanner;
+
 /*Given an integer N, count and return the number of zeros that are present in the given integer using recursion.
 Input Format :
 Integer N
@@ -38,6 +40,8 @@ public class CountZeros {
     }
 
     public static void main(String[] args) {
-        System.out.println(countZeros(1010));
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        System.out.println(countZeros(n));
     }
 }
