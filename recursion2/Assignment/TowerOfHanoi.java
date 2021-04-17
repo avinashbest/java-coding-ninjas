@@ -15,9 +15,12 @@ public class TowerOfHanoi {
         if (numberOfDisks == 0) {
             return;
         }
+        /*FOR RECURSION: source(source) -> destination(auxiliary) with help of auxiliary(destination)*/
         towerOfHanoi(numberOfDisks - 1, sourceTower, destinationTower, auxiliaryTower);
+        /*FOR US: source(source) -> destination(destination) with help of auxiliary(auxiliary)*/
         System.out.println("Move the Disk no." + numberOfDisks +" from Tower " + sourceTower + " -> Tower " + destinationTower);
-        towerOfHanoi(numberOfDisks - 1, auxiliaryTower, destinationTower, sourceTower);
+        /*FOR RECURSION: source(auxiliary) -> destination(destination) with help of auxiliary(source)*/
+        towerOfHanoi(numberOfDisks - 1, auxiliaryTower, sourceTower, destinationTower);
     }
 
     public static void main(String[] args) {
