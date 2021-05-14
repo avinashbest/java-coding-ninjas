@@ -52,8 +52,8 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int[] arr = {2, 3, 4, 5, 6, 8};
-        int searchQuery = 5;
+        int[] arr = takingInput();
+        int searchQuery = scan.nextInt();
         System.out.println(binarySearch(arr, searchQuery));
     }
 }
