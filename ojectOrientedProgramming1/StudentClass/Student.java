@@ -2,21 +2,15 @@ package ojectOrientedProgramming1.StudentClass;
 
 public class Student {
     public String name;
-    private int rollNumber;
+    final private int rollNumber;
+    double cgpa;
+    final double cgpaConversionFactor = 0.95;
+
 
     /*CONSTRUCTOR*/
     public Student(String name, int rollNumber) {
         this.name = name;
         this.rollNumber = rollNumber;
-    }
-
-    public Student(String name) {
-        this.name = name;
-    }
-
-    public Student() {
-        this.name = "Avinash Kumar";
-        this.rollNumber = 191041;
     }
 
     /*GETTERS*/
@@ -25,12 +19,12 @@ public class Student {
     }
 
     /*SETTERS*/
-    public void setRollNumber(int rollNumber) {
-        if (rollNumber <= 0) {
+    public void setName(String name) {
+        if (name.length() <= 3) {
             return;
         }
         System.out.println(this);
-        this.rollNumber = rollNumber;
+        this.name = name;
     }
 
     public void print() {
