@@ -6,14 +6,15 @@ public class Student {
 
     /*GETTERS*/
     public int getRollNumber() {
-        return rollNumber;
+        return this.rollNumber;
     }
 
     /*SETTERS*/
-    public void setRollNumber(int r) {
-        if (r <= 0) {
+    public void setRollNumber(int rollNumber) {
+        if (rollNumber <= 0) {
             return;
         }
-        rollNumber = r;
+        System.out.println(this);
+        this.rollNumber = rollNumber;
     }
 }

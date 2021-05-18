@@ -6,6 +6,7 @@ public class StudentUse {
 
         s1.name = "Avinash Kumar";
         s1.setRollNumber(191041);
+        System.out.println(s1);
         System.out.println(s1.name + "\t" + s1.getRollNumber());
     }
 }
