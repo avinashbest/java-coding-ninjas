@@ -8,7 +8,6 @@ public class StudentUse {
         Student s1 = new Student(scan.next(), scan.nextInt());
         Student s2 = new Student(scan.next(), scan.nextInt());
         Student s3 = new Student(scan.next(), scan.nextInt());
-        System.out.println(Student.numberOfTotalStudents);
-
+        System.out.println(Student.getNumberOfTotalStudents());
     }
 }

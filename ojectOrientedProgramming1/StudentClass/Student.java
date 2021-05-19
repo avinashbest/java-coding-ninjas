@@ -5,7 +5,7 @@ public class Student {
     final private int rollNumber;
     double cgpa;
     public final double CONVERSIONFACTOR = 0.95;
-    static int numberOfTotalStudents = 0;
+    private static int numberOfTotalStudents = 0;
 
 
     /*CONSTRUCTOR*/
@@ -18,6 +18,10 @@ public class Student {
     /*GETTERS*/
     public int getRollNumber() {
         return this.rollNumber;
+    }
+
+    public static int getNumberOfTotalStudents() {
+        return numberOfTotalStudents;
     }
 
     /*SETTERS*/
