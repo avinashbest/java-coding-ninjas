@@ -4,13 +4,15 @@ public class Student {
     public String name;
     final private int rollNumber;
     double cgpa;
-    final double cgpaConversionFactor = 0.95;
+    public final double CONVERSIONFACTOR = 0.95;
+    static int numberOfTotalStudents = 0;
 
 
     /*CONSTRUCTOR*/
     public Student(String name, int rollNumber) {
         this.name = name;
         this.rollNumber = rollNumber;
+        numberOfTotalStudents++;
     }
 
     /*GETTERS*/
