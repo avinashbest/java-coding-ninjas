@@ -1,4 +1,4 @@
-package ojectOrientedProgramming1.ComplexNumber;
+package objectOrientedProgramming1.ComplexNumber;
 
 public class Complex {
     private int real;

@@ -1,4 +1,4 @@
-package ojectOrientedProgramming1.StudentClass;
+package objectOrientedProgramming1.StudentClass;
 
 public class Student {
     public String name;

@@ -1,4 +1,4 @@
-package ojectOrientedProgramming1.ComplexNumber;
+package objectOrientedProgramming1.ComplexNumber;
 
 import java.util.Scanner;
 

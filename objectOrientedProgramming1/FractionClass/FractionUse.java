@@ -1,4 +1,4 @@
-package ojectOrientedProgramming1.FractionClass;
+package objectOrientedProgramming1.FractionClass;
 
 public class FractionUse {
     public static void main(String[] args) {
