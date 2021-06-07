@@ -2,33 +2,11 @@ package backtracking;
 
 import java.util.Scanner;
 
-/*You are given a N*N maze with a rat placed at maze[0][0]. Find whether any path exist that rat can follow to reach its destination i.e. maze[N-1][N-1]. Rat can move in any direction ( left, right, up and down).
-Value of every cell in the maze can either be 0 or 1. Cells with value 0 are blocked means rat cannot enter into those cells and those with value 1 are open.
-Input Format
-Line 1: Integer N
-Next N Lines: Each line will contain ith row elements (separated by space)
-Output Format :
-The output line contains true if any path exists for the rat to reach its destination otherwise print false.
-Sample Input 1 :
-3
-1 0 1
-1 0 1
-1 1 1
-Sample Output 1 :
-true
-Sample Input 2 :
-3
-1 0 1
-1 0 1
-0 1 1
-Sample Output 2 :
- false*/
-public class RatInAMaze {
-
-    public static boolean solveMaze(int[][] maze, int i, int j, int[][] path) {
+public class RatInAMazeAllPossiblePaths {
+    public static void printAllPaths(int[][] maze, int i, int j, int[][] path) {
 //        Checking if the current cell which we are going to traverse is a valid cell or not?
         if (i < 0 || i >= maze.length || j < 0 || j >= maze.length || maze[i][j] == 0 || path[i][j] == 1) {
-            return false;
+            return;
         }
 //        Including the current cell to be in path[i][j]
         path[i][j] = 1;
@@ -36,31 +14,25 @@ public class RatInAMaze {
         if (i == maze.length - 1 && j == maze.length - 1) {
 //            printing the path before returning
             print2dArray(path);
-            return true;
+            path[i][j] = 0;
+            return;
         }
 //        Explore further the maze in all direction
 //        Top Direction
-        if (solveMaze(maze, i - 1, j, path)) {
-            return true;
-        }
+        printAllPaths(maze, i - 1, j, path);
 //        Right Direction
-        if (solveMaze(maze, i, j + 1, path)) {
-            return true;
-        }
+        printAllPaths(maze, i, j + 1, path);
 //        Bottom Direction
-        if (solveMaze(maze, i + 1, j, path)) {
-            return true;
-        }
+        printAllPaths(maze, i + 1, j, path);
 //        Left Direction
-        if (solveMaze(maze, i, j - 1, path)) {
-            return true;
-        }
-        return false;
+        printAllPaths(maze, i, j - 1, path);
+//        resetting path variable to 0
+        path[i][j] = 0;
     }
 
-    public static boolean ratInAMaze(int[][] maze) {
+    public static void ratInAMaze(int[][] maze) {
         int[][] path = new int[maze.length][maze.length];
-        return solveMaze(maze, 0, 0, path);
+        printAllPaths(maze, 0, 0, path);
     }
 
     public static void print2dArray(int[][] arr) {
@@ -100,6 +72,6 @@ public class RatInAMaze {
                 {1, 1, 0},
                 {0, 1, 1}
         };
-        System.out.println(ratInAMaze(maze));
+        ratInAMaze(maze);
     }
 }
