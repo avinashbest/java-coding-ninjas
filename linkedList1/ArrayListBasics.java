@@ -9,8 +9,13 @@ public class ArrayListBasics {
         list.add(30);
         list.add(40);
         list.add(1, 50);
-
-        System.out.println(list.size());
-        System.out.println(list.get(1));
+//        traversing via for loop
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+//        traversing via enhanced for loop
+        for (int i : list) {
+            System.out.println(i);
+        }
     }
 }
