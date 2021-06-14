@@ -2,9 +2,7 @@ package linkedList1;
 
 import java.util.Scanner;
 
-/*Insert Node In LL
-
-You have been given a singly linked list of integers, an integer value called 'data' and a position with the name 'pos.'
+/*IYou have been given a singly linked list of integers, an integer value called 'data' and a position with the name 'pos.'
  Write a function to add a node to the list with the 'data' at the specified position, 'pos.'
 Note :
 Assume that the Indexing for the singly linked list always starts from 0.
@@ -35,7 +33,7 @@ While specifying the list elements for input, -1 indicates the end of the singly
 Output format :
 For each test case, print the resulting singly linked list of integers in a row, separated by a single space.
 
-Output for every test case will be printed in a seperate line.
+Output for every test case will be printed in a separate line.
  Constraints :
 1 <= t <= 10^2
 0 <= N <= 10^5
@@ -60,6 +58,10 @@ public class InsertNodeInLL {
 
     public static Node<Integer> takeLLInput() {
         Scanner scan = new Scanner(System.in);
+        System.out.println("==============================================");
+        System.out.println("Press -1: To stop taking input in linked list.");
+        System.out.println("==============================================");
+        System.out.print("Enter Values: ");
         int data = scan.nextInt();
         Node<Integer> headNode = null;
 //        temporary node to keep track of last Node, which will further connect to new node
@@ -101,47 +103,101 @@ public class InsertNodeInLL {
             tmp = tmp.next;
             currentPosition++;
         }
-        if (tmp == null) {
-            return head;
+//        to avoid null pointer exception we are checking tmp != null
+        if (tmp != null) {
+            newNode.next = tmp.next;
+            tmp.next = newNode;
         }
-        newNode.next = tmp.next;
-        tmp.next = newNode;
-
         return head;
     }
 
     public static Node<Integer> deleteNodeLL(Node<Integer> head, int position) {
-        if (head == null) {
+        if (head == null) { //Special case 1
             return head;
         }
 
-        if (position == 0) {
+        if (position == 0) { //Special case 2
             return head.next;
         }
 
-        int count = 0;
-        Node<Integer> currentHead = head;
-
-        while (currentHead != null && count < (position - 1)) {
-            currentHead = currentHead.next;
-            count++;
+        int currentPosition = 0;
+        Node<Integer> currentNode = head;
+//       We go till (position - 1) because we want to land on the node that comes just before
+        while (currentNode != null && currentPosition < (position - 1)) {
+            currentNode = currentNode.next;
+            currentPosition++;
         }
 
-        if (currentHead == null || currentHead.next == null) {
+        if (currentNode == null || currentNode.next == null) {  //Special case 3
             return head;
         }
 
-        currentHead.next = currentHead.next.next;
+        currentNode.next = currentNode.next.next;
 
         return head;
     }
 
     public static void main(String[] args) {
-        Node<Integer> head = takeLLInput();
-        printLinkedList(head);
-        head = insertNodeInLL(head, 3, 100);
-        printLinkedList(head);
-        head = deleteNodeLL(head, 3);
-        printLinkedList(head);
+        Node<Integer> head = null;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("===========================================");
+        System.out.println("Press 0: Exit.");
+        System.out.println("Press 1: To create a new linked list.");
+        System.out.println("Press 2: Insert element in the linked list.");
+        System.out.println("Press 3: Delete element in the linked list.");
+        System.out.println("Press 4: Print the linked list.");
+        System.out.println("===========================================");
+        int choice;
+        do {
+            System.out.print("Enter Choice: ");
+            choice = scan.nextInt();
+            if (choice == 1) {
+                head = takeLLInput();
+            } else if (choice == 2) {
+                System.out.print("Enter Position: ");
+                int position = scan.nextInt();
+
+                System.out.print("Enter Value: ");
+                int data = scan.nextInt();
+
+                head = insertNodeInLL(head, position, data);
+                System.out.println("Insertion Successful!");
+            } else if (choice == 3) {
+                System.out.print("Enter Position: ");
+                int position = scan.nextInt();
+
+                head = deleteNodeLL(head, position);
+                System.out.println("Deletion Successful!");
+            } else if (choice == 4) {
+                printLinkedList(head);
+            }
+        } while (choice != 0);
     }
 }
+
+/*===========================================
+Press 0: Exit.
+Press 1: To create a new linked list.
+Press 2: Insert element in the linked list.
+Press 3: Delete element in the linked list.
+Press 4: Print the linked list.
+===========================================
+Enter Choice: 1
+==============================================
+Press -1: To stop taking input in linked list.
+==============================================
+Enter Values: 10 20 30 40 50 60 70 80 90 100 -1
+Enter Choice: 4
+10 -> 20 -> 30 -> 40 -> 50 -> 60 -> 70 -> 80 -> 90 -> 100 ->
+Enter Choice: 3
+Enter Position: 9
+Deletion Successful!
+Enter Choice: 4
+10 -> 20 -> 30 -> 40 -> 50 -> 60 -> 70 -> 80 -> 90 ->
+Enter Choice: 2
+Enter Position: 9
+Enter Value: 100
+Insertion Successful!
+Enter Choice: 4
+10 -> 20 -> 30 -> 40 -> 50 -> 60 -> 70 -> 80 -> 90 -> 100 ->
+Enter Choice: 0*/
