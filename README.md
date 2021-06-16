@@ -1,57 +1,17 @@
-# For Manual Compilation of Java Code:
+# Java Installation Guide:
 
-- For compilation.
+### Java Installation For Windows's user : [Medium](https://positive-stud.medium.com/step-by-step-guide-to-install-java-on-windows-pc-c85e7778c14c)
 
-> javac FileName.java
+### Java Installation For Linux's user : [Medium](https://positive-stud.medium.com/step-by-step-guide-to-install-java-on-windows-pc-c85e7778c14c)
 
-- For Running the compiled code.
+# Getting Started:
 
-> java FileName
+### About Eclipse:
 
-* Make sure you are in same directory.
+- Eclipse is an integrated development environment (IDE) for developing applications using the Java programming language and many other programming languages. The Java Development Tools (JDT) project provides a plug-­‐in that allows Eclipse to be used as a Java IDE.
+- A new Java class can be created using the New Java Class wizard. The Java Class wizard can be invoked in different ways –
+  1. By clicking on the File menu and selecting New → Class, or
+  2. By right clicking in the package explorer and selecting New → Class, or
+  3. By clicking on the class drop down button and selecting class.
 
-### The initial segment will focus on logic building and making you familiar with basic programming fundamentals.
-
-- Flow Charts
-- Getting Started
-- Conditionals and Loops
-- Operators
-- Functions, Variables and their Scope
-
-### This section will become a backbone for the rest of your course and will help you excel in the interviews.
-
-- Patterns - 1
-- Patterns - 2
-- Arrays
-- Searching and Sorting
-- Strings and 2D arrays
-
-### In these classes ,We will cover the OOPs concept, Recursion and Time Complexity.
-
-- OOPS - 1
-- OOPS - 2
-- Recursion 1
-- Recursion 2
-- Time Complexity
-
-### This section of the course will cover the basics of Data Structures which will help you to write efficient coding solutions.
-
-- Java.util Libraries
-- Linked List - 1
-- Linked List - 2
-- Stacks & Queues
-
-### This section will focus on the concepts that helps in building Data Structure, its functions and operations.
-
-- Trees
-- Binary Trees
-- BST
-- Hashmaps
-- Priority Queues
-
-### This section will focus on the Dynamic Programming, an advanced aspect of programming.
-
-- Tries and Huffman Coding
-- Dynamic Programming
-- Graphs
-- Game building Project
+> Note: We will understand what classes are when we will study Object Oriented Programming. For now you can assume them as a file. Also name of class and **.java** file inside which we have this class should be same.
