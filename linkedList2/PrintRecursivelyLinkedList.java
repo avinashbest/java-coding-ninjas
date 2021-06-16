@@ -2,7 +2,8 @@ package linkedList2;
 
 import java.util.Scanner;
 
-public class DeleteRecursiveInSLL {
+public class PrintRecursivelyLinkedList {
+
     public static Node<Integer> takeLLInput() {
         Scanner scan = new Scanner(System.in);
         System.out.println("==============================================");
@@ -24,16 +25,6 @@ public class DeleteRecursiveInSLL {
         }
         return headNode;
     }
-    private static void deleteNodeRecursively(Node<Integer> head, int position) {
-        if (head == null && position > 0) {
-            return;
-        }
-
-        if (position == 0) {
-            head = head.next;
-        }
-        deleteNodeRecursively(head.next, position -1);
-    }
 
     public static void printReverseLL(Node<Integer> head) {
         if (head == null) {
@@ -45,11 +36,6 @@ public class DeleteRecursiveInSLL {
 
     public static void main(String[] args) {
         Node<Integer> head = takeLLInput();
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Enter the Position: ");
-        int position = scan.nextInt();
-        deleteNodeRecursively(head, position);
         printReverseLL(head);
     }
-
 }

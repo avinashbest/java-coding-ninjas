@@ -2,7 +2,7 @@ package linkedList2;
 
 import java.util.Scanner;
 
-public class PrintRecursivelySLL {
+public class InsertRecursiveInLinkedList {
 
     public static Node<Integer> takeLLInput() {
         Scanner scan = new Scanner(System.in);
@@ -26,16 +26,37 @@ public class PrintRecursivelySLL {
         return headNode;
     }
 
-    public static void printReverseLL(Node<Integer> head) {
+    public static Node<Integer> insertNodeRecursively(Node<Integer> head, int position, int data) {
+        Node<Integer> newNode = new Node<>(data);
+        if (head == null && position > 0) {
+            return head;
+        }
+//        insertion of newNode at the beginning of the linked list
+        if (position == 0) {
+            newNode.next = head;
+            return newNode; // returning newNode as the new head of the linked list
+        }
+//        recursion will return us the head of the list, so we are attaching it to our list
+        head.next = insertNodeRecursively(head.next, position - 1, data);
+        return head;
+    }
+
+    public static void printList(Node<Integer> head) {
         if (head == null) {
             return;
         }
         System.out.print(head.data + " -> ");
-        printReverseLL(head.next);
+        printList(head.next);
     }
 
     public static void main(String[] args) {
         Node<Integer> head = takeLLInput();
-        printReverseLL(head);
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the Position: ");
+        int position = scan.nextInt();
+        System.out.print("Enter the Value: ");
+        int value = scan.nextInt();
+        insertNodeRecursively(head, position, value);
+        printList(head);
     }
 }

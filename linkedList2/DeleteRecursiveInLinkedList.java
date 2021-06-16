@@ -2,8 +2,7 @@ package linkedList2;
 
 import java.util.Scanner;
 
-public class InsertRecursiveInSLL {
-
+public class DeleteRecursiveInLinkedList {
     public static Node<Integer> takeLLInput() {
         Scanner scan = new Scanner(System.in);
         System.out.println("==============================================");
@@ -26,27 +25,25 @@ public class InsertRecursiveInSLL {
         return headNode;
     }
 
-    public static Node<Integer> insertNodeRecursively(Node<Integer> head, int position, int data) {
-        Node<Integer> newNode = new Node<>(data);
-        if (head == null && position > 0) {
+    private static Node<Integer> deleteNodeRecursively(Node<Integer> head, int position) {
+        if (head == null) {
             return head;
         }
-//        insertion of newNode at the beginning of the linked list
+//        if the position is 0 then we are returning the next node as the head, and the garbage collector delete the node
         if (position == 0) {
-            newNode.next = head;
-            return newNode; // returning newNode as the new head of the linked list
+            return head.next;
         }
-//        recursion will return us the head of the list, so we are attaching it to our list
-        head.next = insertNodeRecursively(head.next, position - 1, data);
+
+        head.next = deleteNodeRecursively(head.next, position - 1);
         return head;
     }
 
-    public static void printReverseLL(Node<Integer> head) {
+    public static void printList(Node<Integer> head) {
         if (head == null) {
             return;
         }
         System.out.print(head.data + " -> ");
-        printReverseLL(head.next);
+        printList(head.next);
     }
 
     public static void main(String[] args) {
@@ -54,9 +51,8 @@ public class InsertRecursiveInSLL {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter the Position: ");
         int position = scan.nextInt();
-        System.out.print("Enter the Value: ");
-        int value = scan.nextInt();
-        insertNodeRecursively(head, position, value);
-        printReverseLL(head);
+        head = deleteNodeRecursively(head, position);
+        printList(head);
     }
+
 }
