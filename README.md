@@ -6,9 +6,7 @@
 
 # Getting Started:
 
-## First Program:
-
-### AboutEclipse:
+### About Eclipse:
 
 - Eclipse is an integrated development environment (IDE) for developing applications using the Java programming language and many other programming languages. The Java Development Tools (JDT) project provides a plug-­‐in that allows Eclipse to be used as a Java IDE.
 - A new Java class can be created using the New Java Class wizard. The Java Class wizard can be invoked in different ways –
