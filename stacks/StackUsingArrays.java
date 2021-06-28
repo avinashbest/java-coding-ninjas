@@ -3,7 +3,7 @@ package stacks;
 public class StackUsingArrays {
 
     private int[] data;
-    //    index of the top-most element
+//    index of the top-most element
     private int top;
 
     public StackUsingArrays() {
@@ -14,9 +14,19 @@ public class StackUsingArrays {
     public void push(int element) {
 //        if the stack is full
         if (top == data.length - 1) {
-            throw new IllegalArgumentException("Stack Overflow");
+            doubleCapacity();
         }
         data[++top] = element;
+    }
+
+    private void doubleCapacity() {
+        System.out.println("Doubling the Capacity...");
+        int[] tmp = data;
+        data = new int[2 * tmp.length];
+
+        for (int i = 1; i < tmp.length; i++) {
+            data[i] = tmp[i];
+        }
     }
 
     public int size() {
