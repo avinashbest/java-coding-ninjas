@@ -21,24 +21,24 @@ public class ReverseStack {
         }
     }
 
-    private static void reverseStack(Stack<Integer> input, Stack<Integer> extra) {
-        if (input.size() <= 1) {
+    private static void reverseStack(Stack<Integer> stack, Stack<Integer> helper) {
+        if (stack.size() <= 1) {
             return;
         }
 
-        int lastElement = input.pop();
+        int lastElement = stack.pop();
 
-        reverseStack(input, extra);
+        reverseStack(stack, helper);
 
-        while (!input.isEmpty()) {
-            int top = input.pop();
-            extra.push(top);
+        while (!stack.isEmpty()) {
+            int top = stack.pop();
+            helper.push(top);
         }
-        input.push(lastElement);
+        stack.push(lastElement);
 
-        while (!extra.isEmpty()) {
-            int top = extra.pop();
-            input.push(top);
+        while (!helper.isEmpty()) {
+            int top = helper.pop();
+            stack.push(top);
         }
     }
 }
