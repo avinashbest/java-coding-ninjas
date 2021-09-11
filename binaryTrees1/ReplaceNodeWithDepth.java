@@ -1,7 +1,5 @@
 package binaryTrees1;
 
-import java.util.Scanner;
-
 import static binaryTrees1.BinaryTreeInput.printBinaryTree;
 import static binaryTrees1.BinaryTreeInput.takeTreeInputDetailed;
 
