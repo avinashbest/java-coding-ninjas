@@ -1,5 +1,7 @@
 package binaryTrees1;
 
+import java.util.Scanner;
+
 public class BinaryTreeUse {
 
     /* Root -> Left -> Right: Traversal on Binary Tree */
@@ -28,18 +30,18 @@ public class BinaryTreeUse {
 
     public static void main(String[] args) {
 //        Creating the nodes
-        var root = new BinaryTreeNode<Integer>(1);
+        var root = new BinaryTreeNode<>(1);
 
-        var rootLeft = new BinaryTreeNode<Integer>(2);
-        var rootRight = new BinaryTreeNode<Integer>(3);
+        var rootLeft = new BinaryTreeNode<>(2);
+        var rootRight = new BinaryTreeNode<>(3);
 //        connecting the nodes
         root.left = rootLeft;
         root.right = rootRight;
 //        first part of tree created
 
 //        second part is creating
-        var twoRight = new BinaryTreeNode<Integer>(4);
-        var threeLeft = new BinaryTreeNode<Integer>(5);
+        var twoRight = new BinaryTreeNode<>(4);
+        var threeLeft = new BinaryTreeNode<>(5);
 
         rootLeft.right = twoRight;
         rootRight.left = threeLeft;
