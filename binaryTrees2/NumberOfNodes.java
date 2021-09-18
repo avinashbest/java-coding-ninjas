@@ -7,6 +7,9 @@ import static binaryTrees1.BinaryTreeInput.takeTreeInputDetailed;
 
 public class NumberOfNodes {
 
+    /*
+     * Time Complexity: O(n)
+     * */
     public static int noOfNodes(BinaryTreeNode<Integer> root) {
         if (root == null) return 0;
         return 1 + noOfNodes(root.left) + noOfNodes(root.right);
