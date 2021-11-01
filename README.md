@@ -1,8 +1,8 @@
 # Java Installation Guide:
 
-### Java Installation For Windows's user : [Medium](https://positive-stud.medium.com/step-by-step-guide-to-install-java-on-windows-pc-c85e7778c14c)
+### Java Installation For Windows user : [Medium](https://positive-stud.medium.com/step-by-step-guide-to-install-java-on-windows-pc-c85e7778c14c)
 
-### Java Installation For Linux's user : [Medium](https://positive-stud.medium.com/step-by-step-guide-to-install-java-on-windows-pc-c85e7778c14c)
+### Java Installation For Linux user : [Medium](https://positive-stud.medium.com/step-by-step-guide-to-install-java-on-windows-pc-c85e7778c14c)
 
 # Getting Started:
 
