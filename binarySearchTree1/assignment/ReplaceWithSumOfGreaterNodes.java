@@ -1,8 +1,8 @@
-package binarySearchTree.assignment;
+package binarySearchTree1.assignment;
 
-import binarySearchTree.TreeNode;
+import binarySearchTree1.TreeNode;
 
-import static binarySearchTree.SearchInBST.levelWiseInput;
+import static binarySearchTree1.SearchInBST.levelWiseInput;
 
 /*
 Replace with Sum of greater nodes

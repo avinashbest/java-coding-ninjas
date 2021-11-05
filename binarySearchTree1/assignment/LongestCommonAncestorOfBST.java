@@ -1,10 +1,10 @@
-package binarySearchTree.assignment;
+package binarySearchTree1.assignment;
 
-import binarySearchTree.TreeNode;
+import binarySearchTree1.TreeNode;
 
 import java.util.Scanner;
 
-import static binarySearchTree.SearchInBST.levelWiseInput;
+import static binarySearchTree1.SearchInBST.levelWiseInput;
 
 /*
 LCA of BST

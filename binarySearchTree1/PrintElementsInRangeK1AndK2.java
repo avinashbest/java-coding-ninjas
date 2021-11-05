@@ -1,8 +1,8 @@
-package binarySearchTree;
+package binarySearchTree1;
 
 import java.util.Scanner;
 
-import static binarySearchTree.SearchInBST.levelWiseInput;
+import static binarySearchTree1.SearchInBST.levelWiseInput;
 /*
 Given a Binary Search Tree and two integers k1 and k2, find and print the elements which are in range k1 and k2 (both inclusive).
 Print the elements in increasing order.

@@ -1,6 +1,6 @@
-package binarySearchTree;
+package binarySearchTree1;
 
-import static binarySearchTree.SearchInBST.levelWiseInput;
+import static binarySearchTree1.SearchInBST.levelWiseInput;
 
 
 class IsBSTReturn {

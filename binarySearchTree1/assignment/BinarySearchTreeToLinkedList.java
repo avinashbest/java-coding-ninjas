@@ -1,8 +1,8 @@
-package binarySearchTree.assignment;
+package binarySearchTree1.assignment;
 
-import binarySearchTree.TreeNode;
+import binarySearchTree1.TreeNode;
 
-import static binarySearchTree.SearchInBST.levelWiseInput;
+import static binarySearchTree1.SearchInBST.levelWiseInput;
 /*
 Given a BST, convert it into a sorted linked list. You have to return the head of LL.
 Input format:

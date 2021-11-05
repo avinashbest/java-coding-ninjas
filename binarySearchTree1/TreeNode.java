@@ -1,4 +1,4 @@
-package binarySearchTree;
+package binarySearchTree1;
 
 public class TreeNode<T> {
     public T data;
