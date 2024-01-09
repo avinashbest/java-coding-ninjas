@@ -20,7 +20,7 @@ public class CheckRedundantBrackets {
     }
 
     public static boolean checkRedundant(String expression) {
-        var stack = new Stack<Character>();
+        Stack<Character> stack = new Stack<Character>();
         for (int i = 0; i < expression.length(); i++) {
             if (expression.charAt(i) == '(' || find(expression.charAt(i))) {
                 stack.push(expression.charAt(i));
