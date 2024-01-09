@@ -40,11 +40,11 @@ public class MinimumBracketsReversal {
             return -1; // Only even numbers of brackets can be balanced
         }
 
-        var stack = new Stack<Character>();
+        Stack<Character> stack = new Stack<Character>();
         for (int i = 0; i < expression.length(); i++) {
             char currentCharacter = expression.charAt(i);
 
-            if (currentCharacter == '(') {
+            if (currentCharacter == '{') {
                 stack.push(currentCharacter);
             } else {
 //                pop if there is a balanced pair
